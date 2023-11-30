@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="content-section">
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend claass="border-bottom mb-4">Eliminar Post</legend>
+            <h4>Estas seguro de eliminar el Post? <b>" {{ object.title }} "</b></h4>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Eliminar</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">Ya tienes una cuenta? <a href="{% url 'blog-home' %}">Atrás</a></small>
+        </div>
+    </div>
+{% endblock content %}
